@@ -1,0 +1,74 @@
+<!-- Using the default html boilerplate -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text-Editor | CS455</title>
+  
+  <!-- Font for the software -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <!-- For small icons to use throughout the software -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+  <!-- CSS linked -->
+  <link href="src/css/main.css" rel="stylesheet">
+  <link href="src/css/editor.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- main div -->
+  <div id="main">
+
+    <!-- element containting the sidebar of the application to display all the files that are stored currently. -->
+    <div id="filemenu">
+      <div class="filemenu-title">
+        
+        <h4 onclick="document.querySelector('#new-document-modal').style.display = 'flex';">
+          <i class="fas fa-plus"></i>
+          New document
+        </h4>
+      </div>
+      <ul id="file-list"></ul>
+    </div>
+
+    <!-- contains the text-area of the software -->
+    <div id="editor" >
+      <div class="start">
+        <h1 class="start-title">Text Editor :)</h1>
+        <h3> Hello visitor, welcome to our text-editor </h3>
+        <h5> Developed as a part of course CS455. No copyrights reserved </h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals, code picked online and modified according to our use of dialog prompt, better than window.alert method -->
+  <div class="modal" id="new-document-modal">
+    <div class="modal-window">
+      <span class="close" onclick="document.querySelector('#new-document-modal').style.display = 'none';">
+              <i class="fa fa-times"></i>
+      </span>
+
+      <form name="createFile">
+        <div class="form-field-section">
+
+          <label for="filename">Enter your desired filename : </label><br />
+          <input type="text" name="filename" id="filename-text-field" required />
+        </div>
+      
+        <div class="form-field-section">
+          <button type="submit">Create</button>
+        </div>
+        <p> Your file will be displayed on the sidebar! </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous"></script>
+
+  <script src="src/js/main.js"></script>
+  <script src="src/js/text_styles.js"></script>
+</body>
+</html>
