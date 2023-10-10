@@ -1,0 +1,15 @@
+.App .editor{
+    width: 80%;
+    margin-left:10%;
+    margin-top: 5%;
+    background-color: white;
+}
+
+.App {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+body {
+    background-color: lightgrey;
+}
