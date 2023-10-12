@@ -5,7 +5,12 @@ _**Client**_ : Anyone in need a web-based text-editor
 
 1. Currently all the issues are raised which we think are required for the developement of this software.
 2. We have also added an estimated _**six-week developement plan**_ with week-wise fragmentation of solving the issues.
-3. _**Overview.pdf**_ file contains the summarized form of requirements and also the ideation of the tech-stacks.\
+3. _**Overview.pdf**_ file contains the summarized form of requirements and also the ideation of the tech-stacks.
+
+# Code/File Structure
+- **Client** file contains the UI/UX and functionalities of the software
+- '/Cient' contain **index.html** and a folder **src**. **index.html** contains the HTML of the interface. **src** folder contains the CSS & JS of the application
+- '/Client/src' contains folders for CSS and JS used in the application
 
 # Implementation
 - The application in its current state supports creation & opening of files and some basic text-editing functionalities
