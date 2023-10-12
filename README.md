@@ -11,6 +11,8 @@ _**Client**_ : Anyone in need a web-based text-editor
 - **Client** file contains the UI/UX and functionalities of the software
 - '/Cient' contain **index.html** and a folder **src**. **index.html** contains the HTML of the interface. **src** folder contains the CSS & JS of the application
 - '/Client/src' contains folders for CSS and JS used in the application
+- CSS folder has two files main.css and editor.css which contain the CSS related to the main application and editor respectively
+- JS folder contains main.js and text_styles.js which are for the relavent functions for the software( such as auto-saving ) and text_styling functions
 
 # Implementation
 - The application in its current state supports creation & opening of files and some basic text-editing functionalities
