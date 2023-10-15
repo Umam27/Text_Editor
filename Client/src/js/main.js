@@ -1,3 +1,11 @@
+const hamburger = document.querySelector('.hamburger');
+const navLink = document.querySelector('.nav__link');
+
+hamburger.addEventListener('click', () => {
+  navLink.classList.toggle('hide');
+});
+
+
 // Global variables
 let fileList = document.querySelector("#file-list"), fileElements, openedFile, openedFileElement, files = JSON.parse(localStorage.getItem("files")), editor = document.querySelector("#editor"), editorContent;
 
@@ -131,6 +139,7 @@ const saveFile = (filename) => {
 };
 
 document.addEventListener("DOMContentLoaded",(e) => {
+  e.preventDefault();
   if (localStorage.getItem("files") === null) {
     localStorage.setItem("files", JSON.stringify([]));
   }
