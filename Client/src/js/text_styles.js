@@ -114,7 +114,7 @@ const listIcon = (ordered) => {
 
 const switchBetweenElements = (oldElement, newElement) => {
   for (let i = 0; i < oldElement.attributes.length; i++) {
-    newElement.setAttribute(oldElement.attributes.item(i).nodeName, oldElement.attributes.item(i).nodeName);
+    newElement.setAttribute(oldElement.attributes.item(i).nodeName, oldElement.attributes.item(i).nodeValue);
   }
 
   newElement.innerHTML = oldElement.innerHTML;
