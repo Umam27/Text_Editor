@@ -7,6 +7,7 @@ hamburger.addEventListener('click', () => {
 });
 
 
+
 // Global variables
 let fileList = document.querySelector("#file-list"), fileElements, openedFile, openedFileElement, files = JSON.parse(localStorage.getItem("files")), editor = document.querySelector("#editor"), editorContent, editorToolbar, editorTitle;
 
@@ -121,7 +122,43 @@ const openFile = (filename) => {
           <li class="toolbar-button"onclick="textAlignIcon('center')"><i class="fas fa-align-center"></i></li>
           <li class="toolbar-button"onclick="textAlignIcon('right')"><i class="fas fa-align-right"></i></li>
           <li class="toolbar-button"onclick="textAlignIcon('justify')"><i class="fas fa-align-justify"></i></li>
+          <div id="fontDropdown1">
+            <select name="fontDropdownmenu" id="fontDropdownmenu" class="toolbar-button">
+              <option value="Arial">Arial</option>
+              <option value="Times-new-roman">Times New Roman</option>
+              <option value="Algerian">Algerian</option> 
+              <option value="Berlin sans fb">Berlin sans fb</option> 
+              <!-- Add more font options as needed -->
+            </select>
+          </div>
+          <div id="fontSizeDropdown1">
+            <select name="fontSizeDropdownmenu"id="fontSizeDropdownmenu"class="toolbar-button">
+              
+              <option value="8px">8px</option>
+              <option value="10px">10px</option>
+              <option value="12px">12px</option>
+              <option value="14px">14px</option>
+              <option value="16px">16px</option>
+              <option value="18px">18px</option>
+              <option value="20px">20px</option>
+              <option value="22px">22px</option>
+              <!-- Add more font options as needed -->
+            </select>
+          </div>
+          <div id="fontColorDropdown1">
+            
+            <select name="fontColorDropdownmenu"id="fontColorDropdownmenu"class="toolbar-button">
+              
+              <option value="black">Black</option>
+              <option value="red">Red</option>
+              <option value="blue">Blue</option>
+              <!-- Add more color options as needed -->
+            </select>
+          </div>
+          
+            
         </ul>
+        
       </div>
     </div>
 
@@ -138,7 +175,7 @@ const openFile = (filename) => {
   if (openedFileElement) {
     openedFileElement.style.border = "1px solid #fff";
   }
-
+  
   openedFileElement = fileElements.filter((file) => {
     return file.children[0].textContent == filename;
   })[0];
@@ -147,6 +184,30 @@ const openFile = (filename) => {
   //console.log(`"${filename}" started`);
   // set the openedFile with the contents of the file to open and its filename
   localStorage.setItem("openedFile", JSON.stringify(openedFile));
+
+  const fontDropdown = editor.querySelector('#fontDropdown1');
+
+  fontDropdown.addEventListener('change', () => {
+    const selectedFont = fontDropdownmenu.value;
+    changeFont(selectedFont);
+    console.log(selectedFont);
+  });
+
+  const fontSizeDropdown = editor.querySelector('#fontSizeDropdown1');
+
+  fontSizeDropdown.addEventListener('change', () => {
+    const selectedFontSize = fontSizeDropdownmenu.value;
+    changeFontSize(selectedFontSize);
+    console.log(selectedFontSize);
+  });
+
+  const fontColorDropdown = editor.querySelector('#fontColorDropdown1');
+  
+  fontColorDropdown.addEventListener('change', () => {
+    const selectedFontColor = fontColorDropdownmenu.value;
+    changeFontColor(selectedFontColor);
+    console.log(selectedFontColor);
+  });
 
 };
 
@@ -224,6 +285,39 @@ document.addEventListener("keydown", (event) => {
   } 
 }, false);
 
+/// Function to count lines
+// Function to count lines
+const countLines = () => {
+  const text = document.getElementById('editor').innerText.trim();
+  if (text === '') {
+    return 0; // If editor is empty, return 0 lines
+  }
+  const lineBreaks = text.split('\n').filter(line => line.trim() !== ''); // Filter out empty lines
+  return lineBreaks.length-20;
+};
 
 
+// Function to count words
+const countWords = () => {
+  const text = document.getElementById('editor').innerText;
+  const words = text.split(/\s+/).filter((word) => word !== '');
+  return words.length-23;
+};
 
+// Function to update line and word counts in the footer
+const updateCountsInFooter = () => {
+  const lineCount = countLines();
+  const wordCount = countWords();
+
+  const lineCountFooterElement = document.getElementById('lineCountFooter');
+  const wordCountFooterElement = document.getElementById('wordCountFooter');
+
+  lineCountFooterElement.textContent = `Lines: ${lineCount}`;
+  wordCountFooterElement.textContent = `Words: ${wordCount}`;
+};
+
+// Event listener for input changes in the editor
+const editorl = document.getElementById('editor');
+editorl.addEventListener('input', () => {
+  updateCountsInFooter(); // Update counts in the footer
+});
