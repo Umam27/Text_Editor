@@ -77,7 +77,30 @@
   cursor: pointer;
   transition: all .3s ease;
 }
+.toolbar-section select {
+  display: inline-flex;
+  flex-wrap: wrap;
 
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+
+  width: 100px;
+  height: 28px;
+
+  padding: 1px;
+  margin: 2px 2px 10px 2px;
+
+  border: 1px solid #fffcfc;
+  border-radius: 4px;
+
+  position: relative;
+  top: 0;
+
+  cursor: pointer;
+  transition: all .3s ease;
+}
 .subheader-number-symbol {
   font-size: 16px
 }
