@@ -75,7 +75,7 @@
   top: 0;
 
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .toolbar-section select {
   display: inline-flex;
@@ -99,8 +99,8 @@
   top: 0;
 
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .subheader-number-symbol {
-  font-size: 16px
+  font-size: 16px;
 }
