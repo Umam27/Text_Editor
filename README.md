@@ -13,12 +13,14 @@ _**Client**_ : Anyone in need a web-based text-editor
 - '/Client/src' contains folders for CSS and JS used in the application
 - CSS folder has two files main.css and editor.css which contain the CSS related to the main application and editor respectively
 - JS folder contains main.js and text_styles.js which are for the relavent functions for the software( such as auto-saving ) and text_styling functions
+- JS folder also contains test.js which has 4 function to test - for navbar toggle, for file addition and local storage, text styling functions and opening and saving files
 
 # Implementation
 - The application in its current state supports creation & opening of files and some basic text-editing functionalities
 - Earlier we were going to use MongoDB for the database, but due to some difficulties in implementing some functionalities, One of the team mates suggested to shift towards 'localStorage' for our application [ prev work - [TodoList](https://umam27.github.io/to-do-list/)]
 - Since the team-members were familiar with working with the 'localStorage', we went ahead with our implementations.
 - More details can be seen in the **Discussions.pdf**
+- The test will automatically run at page reload but to test again use function testall(); in the console
 
 # Report
 - Initial progress of the team was slow, because of the tech-stacks selection process and learning about them. We catched up with the developement in the mid-phase but again due to some implementation level difficulties, we had to switch to a different plan altogether.
